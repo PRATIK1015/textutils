@@ -2,8 +2,8 @@
 import React,{useState} from 'react'
 
 import './App.css';
-//  import About from './components/About';
 import Navbar from './components/Navbar';
+import About from './components/About';
 import TextForm from './components/TextForm';
 function App() {
   const [mode,Setmode]=useState('light')
@@ -11,11 +11,12 @@ function App() {
     if(mode==='dark'){
       Setmode('light');
       document.body.style.backgroundColor='white'
-     
+      document.title='TextUtils - LightMode';
     }
     else{
       Setmode('dark')
       document.body.style.backgroundColor='#042743'
+      document.title='TextUtils - DarkMode';
     }
   }
   
@@ -23,10 +24,11 @@ function App() {
 <>
 <Navbar tittle="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode}/>
 {/* <Navbar aboutText="About"/> */}
-{/* <div className="container my-3"> */}
+<div className="container my-3"> 
 <TextForm heading="Enter Text Below" mode={mode}/>
-{/* </div> */}
-{/* <div className='container'><About/></div> */}
+{/* <About/> */}
+ </div>
+
 </>
   );
 }
